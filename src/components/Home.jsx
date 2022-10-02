@@ -9,7 +9,13 @@ const Home = () => (
         <img src={Image} alt="A movie night" />
       </div>
       <div className="info-container">
-        <h2>Imagine if Snapchat had events.</h2>
+        <h2>
+          Imagine if
+          {' '}
+          <span>Snapchat</span>
+          {' '}
+          had events.
+        </h2>
         <p>
           Easily host and share events with your friends across any social
           media.
