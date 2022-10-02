@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import Image from '../img/image 1.png';
 import './home.css';
 
@@ -20,9 +21,11 @@ const Home = () => (
           Easily host and share events with your friends across any social
           media.
         </p>
-        <button type="button" className="btn btn-primary">
-          Create my event
-        </button>
+        <Link to="/create">
+          <button type="button" className="btn btn-primary">
+            Create my event
+          </button>
+        </Link>
       </div>
     </div>
   </section>
