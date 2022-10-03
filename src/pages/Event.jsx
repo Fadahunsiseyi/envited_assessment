@@ -1,5 +1,8 @@
 export default function Event(details) {
-  console.log(details);
+  const {
+    username, hostname, date, location,
+  } = details;
+  console.log(`${username} ${hostname} ${date} ${location}`);
   return (
     <div />
   );
