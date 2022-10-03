@@ -1,8 +1,9 @@
 /* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { useState } from 'react';
-import Event from './Event';
+import { useNavigate } from 'react-router-dom';
+import PropTypes from 'prop-types';
 
-const EventDetails = () => {
+const EventDetails = ({ onSubmitForm }) => {
   const [inputs, setInputs] = useState({});
 
   const handleChange = (event) => {
@@ -11,10 +12,13 @@ const EventDetails = () => {
     setInputs((values) => ({ ...values, [name]: value }));
   };
 
+  const navigate = useNavigate();
+
   const handleSubmit = (event) => {
     event.preventDefault();
-    Event(inputs);
+    onSubmitForm(inputs);
     setInputs({});
+    navigate('/event');
   };
   return (
     <form onSubmit={handleSubmit}>
@@ -57,6 +61,10 @@ const EventDetails = () => {
       <input type="submit" />
     </form>
   );
+};
+
+EventDetails.propTypes = {
+  onSubmitForm: PropTypes.func.isRequired,
 };
 
 export default EventDetails;

@@ -1,9 +1,17 @@
-export default function Event(details) {
+import PropTypes from 'prop-types';
+
+export default function Event({ inputs }) {
   const {
     username, hostname, date, location,
-  } = details;
+  } = inputs;
   console.log(`${username} ${hostname} ${date} ${location}`);
   return (
-    <div />
+    <div>
+      hello
+    </div>
   );
 }
+
+Event.propTypes = {
+  inputs: PropTypes.objectOf(PropTypes.string).isRequired,
+};
